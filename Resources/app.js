@@ -5,6 +5,16 @@
 	// this sets the background color of the master UIView (when there are no windows/tab groups on it)
 	Titanium.UI.setBackgroundColor('#000');
 
+    var HomePage = require("/pages/Home");
+    var ExamSimulationPage = require("/pages/ExamSimulation");
+    var KnowledgeAreaPage = require("/pages/KnowledgeArea");
+    var AskExpertPage = require("/pages/AskExpert");
+    var CalculatorPage = require("/pages/Calculator");
+    var UserStoriesPage = require("/pages/UserStories");
+    var GlossaryPage = require("/pages/Glossary");
+    
+    
+    
 	var tabGroup = Titanium.UI.createTabGroup();
 
 	var mainWindow = Titanium.UI.createWindow({
@@ -15,23 +25,31 @@
 		navBarHidden: false,
 		tabBarHidden: true,
 		orientationModes: [ //Denote what orientation modes the window will support (this will follow through to new windows)
-			Ti.UI.LANDSCAPE_LEFT,
-			Ti.UI.LANDSCAPE_RIGHT,
-			Ti.UI.PORTRAIT,
-			Ti.UI.UPSIDE_PORTRAIT
+			 Ti.UI.LANDSCAPE_LEFT,
+			 Ti.UI.LANDSCAPE_RIGHT,
+			 Ti.UI.PORTRAIT,
+			 Ti.UI.UPSIDE_PORTRAIT
 		]
 	});
 	var tab = Titanium.UI.createTab({
 		//icon:'KS_nav_views.png', //Irrelevant; we are hiding the tab bar
-		title:'', //Irrelevant; we are hiding the tab bar
+		title: (Ti.Platform.osname === "android") ? 'Project Management Tutorial' : "", //Irrelevant; we are hiding the tab bar
+		font:{
+				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
+				fontSize: "20dp",
+				fontWeight: "bold"
+			},
 		window:mainWindow
 	});
 
+
+	
 	//Add a table of tours to the app
 	var tours = [
 		{
 			title: "     Home",
-			shortDescription: "Explore California our favorite way...by foot! Get outdoors and into the millions of acres of forests, desert, and spectacular scenery that California is famous for.",
+			shortDescription: "Project Management Home page.",
+			key : "Home",
 			color: "#000",
 			font:{
 				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
@@ -44,7 +62,8 @@
 		},
 		{
 			title: "     Exam Simulation",
-			shortDescription: "Looking for a little relaxation? California Calm is our hand-picked collection of incredible California Spas and therapy retreats.",
+			shortDescription: "Project Management Exam Simulation page.",
+			key : "ExamSimulation",
 			color: "#000",
 			font:{
 				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
@@ -57,7 +76,8 @@
 		},
 		{
 			title: "     Knowledge Area",
-			shortDescription: "Let's be honest, you have no idea what a hot spring is...do you? Well, we do, and we can't wait for you to experience the relaxing warmth of nature's hot-tubs!",
+			shortDescription: "Project Management page KnowledgeArea",
+			key : "KnowledgeArea",
 			color: "#000",
 			font:{
 				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
@@ -70,7 +90,8 @@
 		},
 		{
 			title: "     Ask Expert",
-			shortDescription: "Whether you are a hard-core mountain biking enthusiast, or just looking for a cool way to see the many scenic towns and vistas of our great state, Cycle California has a package for you!",
+			shortDescription: "Project Management Ask Expert page",
+			key : "AskExpert",
 			color: "#000",
 			font:{
 				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
@@ -83,7 +104,8 @@
 		},
 		{
 			title: "     User's Stories",
-			shortDescription: "Our most wide-ranging tour option! Come explore California from the stunning deserts all the way to our beautiful coast.",
+			shortDescription: "Calculator.",
+			key : "UserStories",
 			color: "#000",
 			font:{
 				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
@@ -96,7 +118,8 @@
 		},
 		{
 			title: "     Calculator",
-			shortDescription: "California is an amazing playground for everyone and should be experienced by all. From amazing museums, outstanding parks, Disney, and kid-centered nature experiences, Kids California truly has it all! ",
+			shortDescription: "Project Management Calculator Page.",
+			key : "Calculator",
 			color: "#000",
 			font:{
 				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
@@ -109,7 +132,8 @@
 		},
 		{
 			title: "     Glossary",
-			shortDescription: "If you love the outdoors, nature, and the environment, California is the place for you! Our eco-tours range from watching seals and whales to exploring the desert for rare lizards and fauna.",
+			shortDescription: "Project Management Glossary page.",
+			key : "Glossary",
 			color: "#000",
 			font:{
 				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
@@ -123,7 +147,7 @@
 	];
 
 	var tableView = Ti.UI.createTableView({
-		top: 0,
+		top: 80,
 		height: Ti.UI.FILL,
 		backgroundColor: "transparent",
 		data: tours
@@ -135,12 +159,13 @@
 		var win = Ti.UI.createWindow({
 			title: params.title,
 			backgroundColor: "#FFF"
-		});
+		}); 
 		var label = Ti.UI.createLabel({
 			text: params.shortDescription,
 			font: params.font
 		});
 		win.add(label);
+		
 		//Fire the click sound
 		win.addEventListener("click", function(e){
 			Ti.App.fireEvent("clickSound", {caller: "newWindow"});
@@ -155,9 +180,44 @@
 		var w = createNewWindow({
 			title: e.rowData.title,
 			shortDescription: e.rowData.shortDescription,
-			font: e.rowData.font
+			font: e.rowData.font,
+			height: Ti.UI.FILL
 		});
-		tab.open(w, {animated: true});
+		//tab.open(w, {animated: true});
+		
+		if(e.rowData.key == "ExamSimulation") {
+		  var examSimulation = new ExamSimulationPage();
+		  tab.open(examSimulation, {animated: true});
+		}
+		if(e.rowData.key == "Home") {
+		  var homePage = new HomePage();
+		  tab.open(homePage, {animated: true});
+	    }
+	    
+		if(e.rowData.key == "KnowledgeArea") {
+		  var knowledgeArea = new KnowledgeAreaPage();
+		  tab.open(knowledgeArea, {animated: true});
+	    }
+	    
+		if(e.rowData.key == "AskExpert") {
+		  var askExpert = new AskExpertPage();
+		  tab.open(askExpert, {animated: true});
+	    }
+	    
+		if(e.rowData.key == "UserStories") {
+		  var userStories = new UserStoriesPage();
+		  tab.open(userStories, {animated: true});
+	    }
+	    
+		if(e.rowData.key == "Calculator") {
+		  var calculator = new CalculatorPage();
+		  tab.open(calculator, {animated: true});
+	    }
+	    
+		if(e.rowData.key == "Glossary") {
+		  var glossary = new GlossaryPage();
+		  tab.open(glossary, {animated: true});
+	    }
 	});
 
 	//Create handles for the click sound
@@ -168,7 +228,7 @@
 		//preload: true
 	//});
 	Ti.App.addEventListener("clickSound", function(e){
-		click.play();
+		//click.play();
 		console.log("click! caller:" + e.caller);
 	});
 

@@ -6,13 +6,13 @@
     <property name="acs-oauth-secret-development" type="string">rUalnduYALsLUGUl6facmI249EDJkUDJ</property>
     <property name="acs-oauth-key-development" type="string">IfNhpJuiRyh0suADlxbRv5vVErZdmvCj</property>
     <property name="acs-api-key-development" type="string">XRvRSwrq9E5AG9H9WcWrWZmX0YgRtTpZ</property>
-    <id>org.explorecalifornia.ti0204</id>
-    <name>0204 Handling orientation changes</name>
+    <id>com.boston.university</id>
+    <name>PMTOnline</name>
     <version>1.0</version>
     <publisher>you</publisher>
-    <url>http://www.explorecalifornia.org</url>
-    <description>not specified</description>
-    <copyright>2013 by you</copyright>
+    <url>http://www.boston.com</url>
+    <description>Project Management Tutorial</description>
+    <copyright>2014 by Team2</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
