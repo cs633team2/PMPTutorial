@@ -18,105 +18,29 @@
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	</head>
 
-	<body style="font-size: 10dp">
+	<body>
 		<div>
-		<!--	<header>
-				<h1>videos</h1>
-			</header>-->
-		<div>
-				
-			<form id="f1" >
-				<p> Q1 Which of the following is a tool used to secure expert judgment? </p>
-				<input type="radio" name="radio1" value="1" />A. Peer review
-				<br/><input type="radio" name="radio1" id="radio1" value="2" />B. Delphi technique
-				<br/><input type="radio" name="radio1" value="3" />C. Expected value technique
-				<br/><input type="radio" name="radio1" value="4" />D. Work Breakdown Structure (WBS)
-				
-				<div id="q1Correct" style="display:none"> Q1 --> Correct Answer B </div>
-				<div id="q1" style="display:none"> <p> Q1 --> Incorrect Answer </p>
-					Correct Choice: B
-				<p>Explanation: 
-				The ‘Delphi technique’ is a commonly used tool to secure expert judgment while initiating a project.
-				‘Peer review’ is a project selection tool, ‘Expected value’ is a method quantitative risk analysis, and ‘WBS’ is a project planning tool.
+			
+			<p>Click on links to start exam </p>
+			
+			<nav>
+				<p>
+					<a href="examQuestionPaper1.html"> Test Prep 1 </a>
 				</p>
-			  </div>
-				
-				
-				<p> Q2 Based on the information provided below, which project would you recommend pursuing?
-				 <br/> Project I, with BCR (Benefit Cost ratio) of 1:1.6;
-				<br/> Project II, with NPV of US $ 500,000;
-				<br/> Project III, with IRR (Internal rate of return) of 15%
-				<br/> Project IV, with opportunity cost of US $ 500,000. 
+				<p>
+					<a href="examQuestionPaper2.html"> Test Prep 2</a>
 				</p>
-				
-				
-				<input type="radio" name="radio2" value="1" /> A. Project I
-				<br/><input type="radio" name="radio2" id="radio2" value="2" /> B. Project III
-				<br/><input type="radio" name="radio2" value="3" /> C. Either project II or IV
-				<br/><input type="radio" name="radio2" value="4" /> D. Can not say from the data provided
-				
-			<div id="q2Correct" style="display:none"> Q2 --> Correct Answer B </div>
-			<div id="q2" style="display:none">  <p> Q2 --> Incorrect Answer </p>
-				Correct Choice: B
-			<p>Explanation: 
-			Project III has an IRR of 15%, which means the revenues from the project equal the cost expended at an interest rate of 15%. This is a definitive and a favorable parameter, and hence can be recommended for selection.
-			Project I has an unfavorable BCR and hence cannot be recommended.
-			<br /> provided on projects II and IV is not definitive, and hence neither of projects II and IV qualifies for a positive recommendation.
-			</p>
-			</div>
-				
-				<!--<p> Q3 What should be done by the project manager to ensure that all work in the project is included? </p>
-				<input type="radio" name="radio3" value="1" /> A. Create a contingency plan
-				<br/><input type="radio" name="radio3" value="2" /> B. Create a risk management plan
-				<br/><input type="radio" name="radio3" id="radio3" value="3" /> C. Create a WBS
-				<br/><input type="radio" name="radio3" value="4" /> D. Create a scope statement 
-				-->
-				
-				
-				<div>
-				<input type="button" name="submit1" value="submit" onclick="return resultDisplay()"/>
-				</div>
-			</form>	
+			</nav>
+
+			<div>
 
 			</div>
 
 			<!--<footer>
 				<p>
-					 by Team2
+					  by Team2
 				</p>
 			</footer>-->
 		</div>
 	</body>
-	
-	<script type="text/javascript">
-		function resultDisplay() {
-		  try {
-			var r1 = document.getElementById("radio1").checked;
-			document.getElementById("q1").style.display = "none";
-			document.getElementById("q1Correct").style.display = "none";
-			//alert(r1);
-			if(r1) {
-				//alert(r1);
-			    document.getElementById("q1Correct").style.display = "block";
-				//document.getElementById("q1").innerHTML = "Q1 --> Correct Answer B";
-			} else {
-			    document.getElementById("q1").style.display = "block";
-			}
-		  }catch(e){}
-		  
-		 
-		  try {
-			var r2 = document.getElementById("radio2").checked;
-			document.getElementById("q2").style.display = "none";
-			document.getElementById("q2Correct").style.display = "none";
-			//alert(r2);
-			if(r2) {
-				document.getElementById("q2Correct").style.display = "block";
-			} else {
-				document.getElementById("q2").style.display = "block";
-			}
-		  }catch(e){}
-		  
-		}
-	</script>
 </html>

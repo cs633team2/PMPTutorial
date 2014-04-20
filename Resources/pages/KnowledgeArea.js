@@ -13,8 +13,8 @@ function KnowledgeArea(params){
 	});
 	
 	
-	var headerLabel = Ti.UI.createLabel({
-	    text : "These videos are useful for project management preparation",
+	/*var headerLabel = Ti.UI.createLabel({
+	    text : " These video resources can assist you in your PMP Certification goal: ",
 	    top : 5,
 		color: "#000",
 		font:{
@@ -22,20 +22,13 @@ function KnowledgeArea(params){
 			fontSize: "11dp", fontWeight: "bold"
 		},
 	});
+	KnowledgeAreaWindow.add(headerLabel); */
 	
 	var webview = Ti.UI.createWebView({
-   url: "/html/videos.html",
- });
-	KnowledgeAreaWindow.add(headerLabel);
+       url: "/html/videos.html",
+   });
 	KnowledgeAreaWindow.add(webview);
-	
-	
-	
-	
-	
-	//Critical Path: (https://www.youtube.com/watch?v=zUUhrT5vIwg)
- //Earned Value Management: (https://www.youtube.com/watch?v=UggTFk2EiUg)
-
+		
 	
 	return KnowledgeAreaWindow;
 }

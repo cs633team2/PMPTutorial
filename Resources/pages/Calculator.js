@@ -8,7 +8,6 @@ function Calculator(params){
 		title: "Calculator",
 		backgroundColor: "#FFF",
 		//fullscreen: false,	//[Android: makes the window a "heavyweight" window (thereby allowing the back button to work with it)]
-		//exitOnClose: true, //[Android: make the application exit if the back button is pressed from the main window]
 		//navBarHidden: false,
 		//tabBarHidden: true,
 	});

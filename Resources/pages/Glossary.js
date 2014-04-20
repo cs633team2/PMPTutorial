@@ -15,7 +15,7 @@ function Glossary(params){
 	
 	var glossaryTopLabel = Ti.UI.createLabel({
 	    text : "Uses the following industry standard project management dictionary terms:",
-	    top : 5,
+	    top : 15,
 		color: "#000",
 		font:{
 			fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
@@ -111,8 +111,54 @@ function Glossary(params){
 				fontSize: "10dp"
 			}			
 		},
-		
-	
+		{
+			title: "Communications Management",
+			color: "#000",
+			font:{
+				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
+				fontSize: "10dp", fontWeight: "bold"
+			}
+		},
+		{
+			title: "The process of identifying,creating,reviewing and distributing communications messages to stakeholders.",
+			color: "#000",
+			font:{
+				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
+				fontSize: "10dp"
+			}			
+		},
+	   {
+			title: "Communications Planning",
+			color: "#000",
+			font:{
+				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
+				fontSize: "10dp", fontWeight: "bold"
+			}
+		},
+		{
+			title: "The process of identifying the information needs of project stakeholders and scheduling communications activities to meet those needs within the project.",
+			color: "#000",
+			font:{
+				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
+				fontSize: "10dp"
+			}			
+		},
+		{
+			title: "Cost Management",
+			color: "#000",
+			font:{
+				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
+				fontSize: "10dp", fontWeight: "bold"
+			}
+		},
+		{
+			title: "The process of monitoring and controlling the costs incurred within a project, through the completion and approval of expense forms.",
+			color: "#000",
+			font:{
+				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
+				fontSize: "10dp"
+			}			
+		},
 	];
 
 	var glTableView = Ti.UI.createTableView({

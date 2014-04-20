@@ -9,7 +9,7 @@
     var ExamSimulationPage = require("/pages/ExamSimulation");
     var KnowledgeAreaPage = require("/pages/KnowledgeArea");
     var AskExpertPage = require("/pages/AskExpert");
-    var CalculatorPage = require("/pages/Calculator");
+    var FormulasPage = require("/pages/Formulas");
     var UserStoriesPage = require("/pages/UserStories");
     var GlossaryPage = require("/pages/Glossary");
     
@@ -104,7 +104,7 @@
 		},
 		{
 			title: "     User's Stories",
-			shortDescription: "Calculator.",
+			shortDescription: "User Stories Page.",
 			key : "UserStories",
 			color: "#000",
 			font:{
@@ -117,9 +117,9 @@
 			className: "tableRow"
 		},
 		{
-			title: "     Calculator",
-			shortDescription: "Project Management Calculator Page.",
-			key : "Calculator",
+			title: "     Formulas",
+			shortDescription: "Project Management Formulas Page.",
+			key : "Formula",
 			color: "#000",
 			font:{
 				fontFamily: (Ti.Platform.osname === "android") ? "Aller_Bd" : "Aller",
@@ -209,9 +209,9 @@
 		  tab.open(userStories, {animated: true});
 	    }
 	    
-		if(e.rowData.key == "Calculator") {
-		  var calculator = new CalculatorPage();
-		  tab.open(calculator, {animated: true});
+		if(e.rowData.key == "Formula") {
+		  var formula = new FormulasPage();
+		  tab.open(formula, {animated: true});
 	    }
 	    
 		if(e.rowData.key == "Glossary") {

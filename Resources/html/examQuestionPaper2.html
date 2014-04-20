@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Test Paper1</title>
+		<meta name="description" content="">
+		<meta name="author" content="CS699">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body style="font-size: 10dp">
+				
+
+			<form id="f1" >
+				<p> Q1 What should be done by the project manager to ensure that all work in the project is included? </p>
+				<input type="radio" name="radio1" value="1" /> A. Create a contingency plan
+				<br/><input type="radio" name="radio1" value="2" /> B. Create a risk management plan
+				<br/><input type="radio" name="radio1" id="radio1" value="3" /> C. Create a WBS
+				<br/><input type="radio" name="radio1" value="4" /> D. Create a scope statement
+				
+				<div id="q1Correct" style="display:none"> Q1 --> Correct Answer C </div>
+				<div id="q1" style="display:none"> <p> Q1 --> Incorrect Answer </p>
+					Correct Choice: C
+				<p> 
+					Explanation: 
+       			A WBS is a deliverable oriented grouping of project components that organizes and defines the total scope of the project.
+
+				</p>
+			  </div>
+				
+				
+				<p> Q2 What kind of a relationship is implied when completion of a successor is dependent on initiation of its predecessor?
+				</p>
+				
+				
+				<input type="radio" name="radio2" value="1" /> A. FS
+				<br/><input type="radio" name="radio2" value="2" /> B. FF
+				<br/><input type="radio" name="radio2" value="3" /> C. SS
+				<br/><input type="radio" name="radio2" id="radio2" value="4" /> D. SF
+				
+			<div id="q2Correct" style="display:none"> Q2 --> Correct Answer D </div>
+			<div id="q2" style="display:none">  <p> Q2 --> Incorrect Answer </p>
+				Correct Choice: D
+			<p> 
+	Explanation: 
+	A start-to-finish (SF) relationship between two activities implies that the completion of successor is dependent on the initiation of its predecessor.
+	A finish-to-start (FS) relationship between two activities implies that the initiation of successor is dependent on the completion of predecessor.
+	A finish-to-finish (FF) relationship between two activities implies that the completion of successor is dependent on the completion of predecessor.
+	A start-to-start (SS) relationship implies that the initiation of successor is dependent on the initiation of predecessor.
+
+			</p>
+			</div>
+				
+				<!--<p> Q3 What should be done by the project manager to ensure that all work in the project is included? </p>
+				<input type="radio" name="radio3" value="1" /> A. Create a contingency plan
+				<br/><input type="radio" name="radio3" value="2" /> B. Create a risk management plan
+				<br/><input type="radio" name="radio3" id="radio3" value="3" /> C. Create a WBS
+				<br/><input type="radio" name="radio3" value="4" /> D. Create a scope statement 
+				-->
+				
+				
+				<div>
+				<input type="button" name="submit1" value="submit" onclick="return resultDisplay()"/>
+				</div>
+			</form>	
+
+		
+
+			<!--<footer>
+				<p>
+					// by Team2
+				</p>
+			</footer>-->
+		
+	</body>
+	
+	<script type="text/javascript">
+		function resultDisplay() {
+		  try {
+			var r1 = document.getElementById("radio1").checked;
+			document.getElementById("q1").style.display = "none";
+			document.getElementById("q1Correct").style.display = "none";
+			//alert(r1);
+			if(r1) {
+				//alert(r1);
+			    document.getElementById("q1Correct").style.display = "block";
+			} else {
+			    document.getElementById("q1").style.display = "block";
+			}
+		  }catch(e){}
+		  
+		 
+		  try {
+			var r2 = document.getElementById("radio2").checked;
+			document.getElementById("q2").style.display = "none";
+			document.getElementById("q2Correct").style.display = "none";
+			//alert(r2);
+			if(r2) {
+				document.getElementById("q2Correct").style.display = "block";
+			} else {
+				document.getElementById("q2").style.display = "block";
+			}
+		  }catch(e){}
+		  
+		}
+	</script>
+</html>
